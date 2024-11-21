@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dessert</string>
+    <string name="dessert1">Wagashi</string>
+    <string name="dessert2">Trunk Cake</string>
+    <string name="dessert3">Chocmochi</string>
+    <!-- Dessert image -->
+    <string name="dessert_image">Dessert Image</string>
+</resources>

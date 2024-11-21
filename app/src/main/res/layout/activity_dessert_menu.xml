@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dessert.DessertMenuActivity">
+
+    <!-- Dessert Image 1 -->
+
+    <ImageView
+        android:id="@+id/dessert1"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp"
+        android:contentDescription="@string/dessert1"
+        android:src="@drawable/dessert1"
+        app:layout_constraintBottom_toTopOf="@+id/dessert2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Spinner for Dessert 1 Quantity -->
+
+    <!-- Dessert 2 -->
+
+    <TextView
+        android:id="@+id/dessert1Name"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="2dp"
+        android:text="@string/dessert1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <!-- Spinner for Dessert 2 Quantity -->
+
+    <!-- Dessert 3 -->
+
+    <!-- Spinner for Dessert 3 Quantity -->
+
+    <Spinner
+        android:id="@+id/quantityDessert1Spinner"
+        android:layout_width="81dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.689"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <ImageView
+        android:id="@+id/dessert2"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:contentDescription="@string/dessert2"
+        android:src="@drawable/dessert2"
+        app:layout_constraintBottom_toTopOf="@+id/dessert3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quantityDessert1Spinner"
+        app:layout_constraintVertical_bias="0.303" />
+
+    <TextView
+        android:id="@+id/dessert2Name"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="2dp"
+        android:text="@string/dessert2"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantityDessert1Spinner" />
+
+    <Spinner
+        android:id="@+id/quantityDessert2Spinner"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="136dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantityDessert1Spinner" />
+
+    <ImageView
+        android:id="@+id/dessert3"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:contentDescription="@string/dessert3"
+        android:src="@drawable/dessert3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quantityDessert2Spinner" />
+
+    <TextView
+        android:id="@+id/dessert3Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="@string/dessert3"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantityDessert2Spinner" />
+
+    <!-- Total Amount and Total Quantity TextViews -->
+
+    <Spinner
+        android:id="@+id/quantityDessert3Spinner"
+        android:layout_width="81dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dessert3Name" />
+
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="Total Amount: $0.00"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quantityDessert3Spinner" />
+
+    <TextView
+        android:id="@+id/totalQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Total Quantity: 0"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/addToOrderButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalAmount" />
+
+    <!-- Add to Order Button -->
+    <Button
+        android:id="@+id/addToOrderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Add to Cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantityDessert3Spinner" />
+
+    <Button
+        android:id="@+id/addToCheckoutButton"
+        android:layout_width="110dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="212dp"
+        android:text="Checkout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantityDessert3Spinner" />
+
+    <TextView
+        android:id="@+id/textView11"
+        style="@style/Widget.MaterialComponents.TextView"
+        android:layout_width="412dp"
+        android:layout_height="37dp"
+        android:autoText="false"
+        android:background="#BCA3E9"
+        android:backgroundTintMode="src_over"
+        android:breakStrategy="simple"
+        android:bufferType="spannable"
+        android:capitalize="sentences"
+        android:clickable="false"
+        android:text="Dessert Menu"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="13dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:text="Price: $5"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintStart_toEndOf="@+id/dessert1"
+        app:layout_constraintTop_toBottomOf="@+id/dessert1Name" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:text="Price: $3.5"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView17"
+        app:layout_constraintStart_toEndOf="@+id/dessert2"
+        app:layout_constraintTop_toBottomOf="@+id/dessert2Name" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:text="Price: $7"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/dessert3"
+        app:layout_constraintTop_toBottomOf="@+id/dessert3Name" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="76dp"
+        android:text="Quantity:"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/dessert2Name"
+        app:layout_constraintEnd_toStartOf="@+id/quantityDessert1Spinner"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/dessert1"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="Quantity:"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/quantityDessert2Spinner"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/dessert2"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="15dp"
+        android:text=" Quantity:"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/quantityDessert3Spinner"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/dessert3"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
