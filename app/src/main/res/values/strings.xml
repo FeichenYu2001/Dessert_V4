@@ -1,8 +1,20 @@
 <resources>
     <string name="app_name">Dessert</string>
+
+    <!-- Dessert name -->
     <string name="dessert1">Wagashi</string>
     <string name="dessert2">Trunk Cake</string>
     <string name="dessert3">Chocmochi</string>
+
     <!-- Dessert image -->
     <string name="dessert_image">Dessert Image</string>
+
+    <!-- Ingredients for each dessert -->
+    <string name="ingredients_dessert1">Ingredients per Wagashi:\n* 25 grams white bean paste (about 6.5 tbsp)\n* 1.25 g shiratamako (about 1.2 tsp)\n* 2.5 g water (about 2.5 tsp)\n* 15 g red bean paste (4 tbsp)\n* gel food coloring</string>
+    <string name="ingredients_dessert2">Ingredients per cake: Cake roll:\n* Egg white: 80g\n* Egg yolk: 50g\n* Sugar: 35g (egg white) + 10g (egg yolk)\n* Cake flour: 20g\n* Cocoa powder: 4g\n* Butter: 20g\n* Whipped cream: 75g\n* Sugar for whipped cream: 10g\n\nTree root coating:\n* Dark chocolate: 40g\n* Whipped cream: 40g</string>
+    <string name="ingredients_dessert3">Ingredients per chocolate mochi:\n*Chocolate filling:\n* Light cream: 8g\n* Dark chocolate: 8g\n* Light cream: 35g\n* White sugar: 8g\n\nGlutinous rice wrapper:\n* Glutinous rice flour: 16g\n* Corn starch: 5g\n* Cane sugar: 5g\n* Milk: 30g\n* Cocoa powder: 1.5g\n* Butter (add after steaming): 3g</string>
+
+    <!-- Back button label -->
+    <string name="back_button">Back</string>
+
 </resources>
