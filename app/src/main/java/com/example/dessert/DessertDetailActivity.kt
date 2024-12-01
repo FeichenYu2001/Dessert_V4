@@ -1,10 +1,12 @@
 package com.example.dessert
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DessertDetailActivity : AppCompatActivity() {
 
@@ -25,7 +27,6 @@ class DessertDetailActivity : AppCompatActivity() {
         val dessertIngredientTextView: TextView = findViewById(R.id.dessertIngredients)
         val backButton: Button = findViewById(R.id.backButton)
 
-
         dessertNameTextView.text = dessertName
         dessertImageView.setImageResource(dessertImageResId)
 
@@ -45,5 +46,31 @@ class DessertDetailActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             finish() // Go back to the previous activity
         }
+
+        // BottomNavigationView setup
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+
+        // Set listener for navigation item selection
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    // Navigate to MainActivity when Home is selected
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish() // Finish the current activity to avoid going back to it
+                    true
+                }
+                R.id.profile -> {
+                    // Handle Profile item selection (if needed)
+                    true
+                }
+                R.id.settings -> {
+                    // Handle Settings item selection (if needed)
+                    true
+                }
+                else -> false
+            }
+        }
     }
 }
+

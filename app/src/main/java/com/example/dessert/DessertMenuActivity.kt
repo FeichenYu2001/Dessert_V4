@@ -1,14 +1,15 @@
 package com.example.dessert
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import android.content.Intent
-import android.widget.ImageView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DessertMenuActivity : AppCompatActivity() {
 
@@ -28,6 +29,7 @@ class DessertMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dessert_menu)
+
         // References to dessert images and names
         val dessert1Image: ImageView = findViewById(R.id.dessert1)
         val dessert1Name: TextView = findViewById(R.id.dessert1Name)
@@ -100,8 +102,38 @@ class DessertMenuActivity : AppCompatActivity() {
             // Optionally, show a toast confirming the order
             Toast.makeText(this, "Order added successfully!", Toast.LENGTH_SHORT).show()
         }
+
+        // BottomNavigationView setup
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+
+        // Set listener for navigation item selection
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    // Navigate to MainActivity when Home is selected
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish() // Finish the current activity to avoid going back to it
+                    true
+                }
+                R.id.profile -> {
+                    // Handle Profile item selection (if needed)
+                    true
+                }
+                R.id.settings -> {
+                    // Handle Settings item selection (if needed)
+                    true
+                }
+                else -> false
+            }
+        }
     }
-    private fun navigateToDetail(dessertNameResId: Int, dessertPriceResId: Int, dessertImageResId: Int) {
+
+    private fun navigateToDetail(
+        dessertNameResId: Int,
+        dessertPriceResId: Int,
+        dessertImageResId: Int
+    ) {
         val intent = Intent(this, DessertDetailActivity::class.java)
         intent.putExtra("DESSERT_NAME_RES_ID", dessertNameResId)
         intent.putExtra("DESSERT_PRICE_RES_ID", dessertPriceResId)
@@ -109,6 +141,7 @@ class DessertMenuActivity : AppCompatActivity() {
         startActivity(intent)
     }
 }
+
 
 
 
