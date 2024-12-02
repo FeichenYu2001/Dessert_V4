@@ -117,7 +117,9 @@ class DessertMenuActivity : AppCompatActivity() {
                     true
                 }
                 R.id.profile -> {
-                    // Handle Profile item selection (if needed)
+                    val intent = Intent(this, DessertMenuActivity::class.java)
+                    startActivity(intent)
+                    finish()
                     true
                 }
                 R.id.settings -> {

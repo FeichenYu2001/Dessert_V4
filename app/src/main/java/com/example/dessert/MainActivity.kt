@@ -7,13 +7,13 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         // Get reference to the TextView (the text you want to animate)
         val mainText: TextView = findViewById(R.id.mainText)
 
@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
 
         // Start the slide-in animation on the TextView
         mainText.startAnimation(slideInRight)
-
         // Button to navigate to DessertMenuActivity
         val startOrderButton: Button = findViewById(R.id.startOrderButton)
         startOrderButton.setOnClickListener {

@@ -2,8 +2,10 @@ package com.example.dessert
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.view.MotionEvent
+//import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -25,7 +27,7 @@ class DessertDetailActivity : AppCompatActivity() {
         val dessertNameTextView: TextView = findViewById(R.id.dessertName)
         val dessertImageView: ImageView = findViewById(R.id.dessertImage)
         val dessertIngredientTextView: TextView = findViewById(R.id.dessertIngredients)
-        val backButton: Button = findViewById(R.id.backButton)
+        //val backButton: Button = findViewById(R.id.backButton)
 
         dessertNameTextView.text = dessertName
         dessertImageView.setImageResource(dessertImageResId)
@@ -43,9 +45,10 @@ class DessertDetailActivity : AppCompatActivity() {
         dessertIngredientTextView.text = ingredients
 
         // Set back button functionality
+        /*
         backButton.setOnClickListener {
             finish() // Go back to the previous activity
-        }
+        }*/
 
         // BottomNavigationView setup
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
@@ -61,7 +64,9 @@ class DessertDetailActivity : AppCompatActivity() {
                     true
                 }
                 R.id.profile -> {
-                    // Handle Profile item selection (if needed)
+                    val intent = Intent(this, DessertMenuActivity::class.java)
+                    startActivity(intent)
+                    finish()
                     true
                 }
                 R.id.settings -> {
@@ -70,6 +75,46 @@ class DessertDetailActivity : AppCompatActivity() {
                 }
                 else -> false
             }
+        }
+        val detailLayout: LinearLayout = findViewById(R.id.detailXML)
+        // setup on touch listener
+        detailLayout.setOnTouchListener { _, _ ->
+            finish()
+            true
+        }
+        val imageView: ImageView = dessertImageView
+        // get org place
+        val originalX = imageView.x
+        val originalY = imageView.y
+        println(originalY)
+        println(originalX)
+        // setup touch listener
+        imageView.setOnTouchListener { v, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    // org place
+                    v.tag = Pair(event.rawX, event.rawY)
+                }
+                MotionEvent.ACTION_MOVE -> {
+                    // get finger
+                    val initialTouch = v.tag as Pair<Float, Float>
+                    val deltaX = event.rawX - initialTouch.first
+                    val deltaY = event.rawY - initialTouch.second
+
+                    // refresh
+                    v.x = v.x + deltaX
+                    v.y = v.y + deltaY
+
+                    // refresh
+                    v.tag = Pair(event.rawX, event.rawY)
+                }
+
+                MotionEvent.ACTION_UP -> {
+                    // goback
+                    v.animate().x(originalX).y(originalY).setDuration(300).start()
+                }
+            }
+            true // end
         }
     }
 }
