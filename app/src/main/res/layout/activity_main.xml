@@ -11,12 +11,14 @@
         android:id="@+id/mainText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="408dp"
-        android:text="Are you ready to taste the best desserts of the town?"
+        android:layout_marginTop="384dp"
+        android:text="𝐒𝐰𝐞𝐞𝐭𝐞𝐧 𝐲𝐨𝐮𝐫 𝐝𝐚𝐲 𝐰𝐢𝐭𝐡 𝐭𝐡𝐞 𝐛𝐞𝐬𝐭 𝐝𝐞𝐬𝐬𝐞𝐫𝐭𝐬 𝐢𝐧 𝐭𝐨𝐰𝐧!"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textColor="@color/material_dynamic_neutral_variant10"
+        android:textSize="24sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,32 +36,27 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="167dp"
-        android:layout_height="77dp"
+        style="@android:style/Widget.TextView.SpinnerItem"
+        android:layout_width="590dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="150dp"
         android:layout_marginBottom="200dp"
-        android:text="Zoe's Desserts"
+        android:hyphenationFrequency="fullFast"
+        android:imeOptions="flagNoPersonalizedLearning|actionGo"
+        android:text="✴ 🎀𝓩𝓸𝓮'𝓼 𝓓𝓮𝓼𝓼𝓮𝓻𝓽𝓼🎀 ✴"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#673AB7"
-        android:textSize="34sp"
+        android:textSize="48sp"
         android:textStyle="bold"
+        android:typeface="normal"
         app:layout_constraintBottom_toTopOf="@+id/mainText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-
-    </FrameLayout>
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -75,5 +72,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.974"
         app:menu="@menu/bottom_nav_menu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
